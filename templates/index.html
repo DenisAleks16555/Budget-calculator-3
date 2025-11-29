@@ -7,14 +7,7 @@
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </head>
 <body>
-    <!-- Логин-форма (теперь стилизована в CSS) -->
-    <div id="loginSection">
-        <input type="text" id="username" placeholder="Имя пользователя" />
-        <input type="password" id="password" placeholder="Пароль" />
-        <button onclick="login()">Войти</button>
-    </div>
-
-    <!-- Основной контейнер с полупрозрачным фоном поверх изображения -->
+<!-- Основной контейнер с полупрозрачным фоном поверх изображения -->
     <div class="container">
         <!-- Логотип/изображение теперь фон body, так что здесь только текст -->
         <h1>Мои расходы</h1>
@@ -68,6 +61,77 @@
     </div>
 </body>
 </html>
+
+
+
+
+
+
+
+    <!-- Логин-форма (теперь стилизована в CSS)
+    <div id="loginSection">
+        <input type="text" id="username" placeholder="Имя пользователя" />
+        <input type="password" id="password" placeholder="Пароль" />
+        <button onclick="login()">Войти</button>
+    </div> -->
+
+    <!-- Основной контейнер с полупрозрачным фоном поверх изображения -->
+    <!-- <div class="container">
+        <!-- Логотип/изображение теперь фон body, так что здесь только текст -->
+        <!-- <h1>Мои расходы</h1> -->
+         -->
+        <!-- Кнопка добавления расхода -->
+        <!-- <a href="{{ url_for('add_expense') }}" class="button">Добавить расход</a>
+         -->
+        <!-- Общая сумма -->
+        <!-- <h2>Общая сумма: {{ total }} руб.</h2> -->
+
+        <!-- Фильтры -->
+        <!-- <div class="filters">
+            <label for="filterDate">Фильтр по дате:</label>
+            <input type="date" id="filterDate">
+            <button onclick="filterByDate()">Показать за дату</button>
+        </div> -->
+
+        <!-- <div class="sort-buttons">
+            <button onclick="sortBySum()">Сортировать по сумме</button>
+            <button onclick="sortByDate()">Сортировать по дате</button>
+        </div> -->
+
+        <!-- Таблица расходов -->
+        <!-- <table class="expenses-table">
+            <thead>
+                <tr>
+                    <th>Описание</th>
+                    <th>Сумма</th>
+                    <th>Дата</th>
+                    <th>Категория</th>
+                    <th>Действия</th>
+                </tr>
+            </thead> -->
+            <!-- <tbody id="expensesBody">  -->
+                 <!-- Если используешь JS для динамики, оставь id -->
+                <!-- {% for expense in expenses %}
+                <tr> -->
+                    <!-- <td>{{ expense.description }}</td>  -->
+                     <!-- Исправил на .description, если в БД так -->
+                    <!-- <td>{{ expense.amount }} руб.</td>
+                    <td>{{ expense.date }}</td> -->
+                    <!-- <td>{{ expense.category or 'Без категории' }}</td> -->
+                      <!-- Добавил категорию, если есть -->
+                    <!-- <td> -->
+                        <!-- Форма для удаления -->
+                        <!-- <form method="POST" action="{{ url_for('delete_expense', expense_id=expense.id) }}" style="display:inline;">
+                            <button type="submit" class="delete-btn" onclick="return confirm('Удалить?')">Удалить</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html> -->
 
 
 
