@@ -1,48 +1,180 @@
+/* Фон во весь экран */
 body {
-    background-color: #f0f8ff; /* светлый голубой фон */
-    font-family: Arial, sans-serif; /* шрифт для текста */
-    margin: 40px; /* отступы вокруг страницы */
+    margin: 0;  /* Убираем отступы */
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('my_image.jpg');  /* Твоё изображение из static/ */
+    background-size: cover;  /* Растягивает на весь экран */
+    background-position: center;  /* Центрирует */
+    background-repeat: no-repeat;
+    background-attachment: fixed;  /* Фон не двигается при скролле */
+    min-height: 100vh;  /* Минимум на весь экран */
+    color: #333;  /* Тёмный текст */
 }
-h1 {
-    color: #4CAF50; /* зеленый цвет заголовка */
-    text-align: center; /* по центру */
+
+/* Логин-форма (сверху, полупрозрачная) */
+#loginSection {
+    background-color: rgba(255, 255, 255, 0.9);  /* Полупрозрачный белый */
+    padding: 20px;
+    text-align: center;
+    max-width: 300px;
+    margin: 20px auto;  /* Центрируем */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Тень */
 }
-p {
-    font-size: 18px; /* размер текста */
-    line-height: 1.6; /* межстрочный интервал */
-    max-width: 800px; /* ширина блока с текстом */
-    margin: 20px auto; /* отступы сверху и по бокам, выравнивание по центру */
-    color: #333; /* темный цвет текста */
-}
-.button {
+
+#loginSection input {
     display: block;
-    width: 200px;
-    margin: 30px auto;
+    width: 100%;
+    margin: 10px 0;
     padding: 10px;
-    background-color: #4CAF50; /* зеленая кнопка */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#loginSection button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#loginSection button:hover {
+    background-color: #45a049;
+}
+
+/* Основной контейнер — поверх фона */
+.container {
+    max-width: 1000px;  /* Шире для таблицы */
+    margin: 20px auto;  /* Центрируем */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.85);  /* Полупрозрачный белый (измени на 0.7 для большего "занавеса") */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Твои старые стили (адаптировал) */
+h1 {
+    color: #4CAF50;
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.button {
+    display: inline-block;  /* Изменил на inline для рядом с другими элементами */
+    width: auto;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
     color: white;
     text-align: center;
     text-decoration: none;
-    border-radius: 5px; /* скругление */
+    border-radius: 5px;
     font-size: 16px;
 }
+
 .button:hover {
-    background-color: #45a049; /* чуть темнее при наведении */
+    background-color: #45a049;
 }
 
+/* Фильтры и сортировка */
+.filters, .sort-buttons {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.filters label {
+    font-weight: bold;
+}
+
+.filters input, .filters button, .sort-buttons button {
+    margin: 5px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.filters button, .sort-buttons button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.filters button:hover, .sort-buttons button:hover {
+    background-color: #45a049;
+}
+
+/* Таблица (улучшил твои стили) */
 .expenses-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
+
 .expenses-table th, .expenses-table td {
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ddd;
+    text-align: left;
 }
-.logo {
-    width: 100px;
-    margin-bottom: 20px;
+
+.expenses-table th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
 }
+
+.expenses-table tr:nth-child(even) {
+    background-color: #f2f2f2;  /* Чередуем цвета строк */
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        padding: 10px;
+    }
+    .expenses-table {
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* CSS-файлы (стили оформления)
